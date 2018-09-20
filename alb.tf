@@ -1,4 +1,5 @@
 module "alb" {
+  # https://github.com/terraform-aws-modules/terraform-aws-alb for usage and list of outputs
   source  = "terraform-aws-modules/alb/aws"
   version = "3.4.0"
 

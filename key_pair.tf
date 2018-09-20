@@ -1,4 +1,4 @@
 resource "aws_key_pair" "tf_key" {
   key_name   = "tf_key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCcn+Npk0DRwKzfZAclNuE/MtHAeThvLgF+yuCIPTN/rWAXf1hlEWJNvKCR7b2ua2+ZoodvS48mC4w+9xpllkvp6eNCRhASCGr11+3gfuFmXOH2IF2yDculcfQ2l/qu3rPTZhGd8VhyUzZ7L67dZGIOu4QUGVCe2NKNDE5eiWeBZYu4pTKwV8dz/gFNP9gWF98VM2OMmhYVRqOsesv8ovInNhSKhUB4rV7GtZag2Z0IjFYEzoYw2o+TFNLYmLoezM4WMk74m10CJKxi9Ij1EdFy1zWSgl6xMk4oY9jUlz0Jgc5uBhNfLgjKGYfxWDVta5TQ3P7gU4Xe3eDKHU/esg4R tf_key"
+  public_key = "${var.PUBLIC_KEY}"
 }

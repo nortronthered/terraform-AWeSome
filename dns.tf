@@ -1,11 +1,15 @@
+resource "aws_route53_zone" "this" {
+  name = "${var.DOMAIN_NAME}"
+}
+
 resource "aws_route53_record" "tf" {
-  zone_id = "Z2EYP36A0DISOC" # this is static for the sake of example
-  name    = "tf.policycat.com"
+  zone_id = "${aws_route53_zone.this.zone_id}"
+  name    = "tf.${aws_route53_zone.this.name}"
   type    = "A"
 
   alias {
     name                   = "${module.alb.dns_name}"
-    zone_id                = "Z1H1FL5HABSF5"
+    zone_id                = "${module.alb.load_balancer_zone_id}"
     evaluate_target_health = true
   }
 }

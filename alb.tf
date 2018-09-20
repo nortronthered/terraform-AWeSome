@@ -4,7 +4,7 @@ module "alb" {
 
   logging_enabled     = true
   log_bucket_name     = "${aws_s3_bucket.log_bucket.id}"
-  log_location_prefix = "${var.log_location_prefix}"
+  log_location_prefix = "${var.LOG_LOCATION_PREFIX}"
 
   load_balancer_name       = "my-alb"
   security_groups          = ["${module.alb-security-group.this_security_group_id}", "${module.web-security-group.this_security_group_id}"]
